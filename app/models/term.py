@@ -7,7 +7,7 @@ if TYPE_CHECKING:
 
 
 class TermBase(SQLModel):
-    Enrollment_Status:str=Field(index=True)
+    Enrollment_Status:bool=False
 
 class Term(TermBase):
     id:int=Field(primary_key=True)
