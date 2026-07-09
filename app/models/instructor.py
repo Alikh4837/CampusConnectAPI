@@ -9,7 +9,6 @@ if TYPE_CHECKING:
 
 
 class InstructorBase(SQLModel):
-    F_id:int=Field(index=True)
     name: str
     phone: int
     address: str
