@@ -13,6 +13,7 @@ class InstructorBase(SQLModel):
     name: str
     phone: int
     address: str
+    password:str
     emergency_contact: Optional[int]
 
 

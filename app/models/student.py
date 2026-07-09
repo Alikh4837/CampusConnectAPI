@@ -12,7 +12,7 @@ class StudentBase(SQLModel):
     phone: int = Field(index=True)
     email: str
     Address: str
-    password:
+    password:str
     emergency_contact:Optional[int]
 
 
