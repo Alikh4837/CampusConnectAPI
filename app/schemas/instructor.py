@@ -3,7 +3,7 @@ from typing import Optional
 
 
 class CreateInstructor(InstructorBase):
-    pass
+    password:str
 
 
 class UpdateInstructor(InstructorBase):
