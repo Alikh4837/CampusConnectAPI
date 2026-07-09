@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 class DepartmentBase(SQLModel):
     dname:str
-    d_code:int
+    dcode:int
 
 class Department(DepartmentBase):
     id:int=Field(primary_key=True)
