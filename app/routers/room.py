@@ -22,7 +22,7 @@ async def Get_Room()->RoomResponse:
     )
     return RoomResponse(**room.model_dump())
 
-@router.get("/list",response_model=RoomResponse)
+@router.get("/list",response_model=list[RoomResponse])
 async def Get_list()->list[RoomResponse]:
     Rooms=[Room(
         id=1,
