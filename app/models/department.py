@@ -10,8 +10,8 @@ class DepartmentBase(SQLModel):
     dept_name:str
     dept_code:int
 
-class Department(DepartmentBase):
+class Department(DepartmentBase,table=True):
     id:int=Field(primary_key=True)
 
-    instructors:List["Instructor"]=Relationship(back_populates="departments")
-    Courses:List["Course"]=Relationship(back_populates="courses")
+    instructors:List["Instructor"]=Relationship(back_populates="department")
+    Courses:List["Course"]=Relationship(back_populates="department")
