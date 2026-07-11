@@ -15,7 +15,7 @@ class StudentBase(SQLModel):
     emergency_contact:Optional[str]
 
 
-class Student(StudentBase):
+class Student(StudentBase,table=True):
     id: int = Field(primary_key=True)
 
-    enrollments:List["Enrollment"]=Relationship(back_populates="Student")
+    enrollments:List["Enrollment"]=Relationship(back_populates="student")
