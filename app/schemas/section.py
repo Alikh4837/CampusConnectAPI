@@ -1,4 +1,4 @@
-from app.models.Section import SectionBase
+from app.models.section import SectionBase
 from typing import Optional
 
 class CreateSection(SectionBase):
