@@ -13,7 +13,7 @@ def create_student(data: CreateStudent) -> StudentResponse:
 
 @router.get("/", response_model=StudentResponse)
 def get_student() -> StudentResponse:
-    student = Student(
+    student = Student(  
         id=1,
         name="john",
         dob="29june2005",
