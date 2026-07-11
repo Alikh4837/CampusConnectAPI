@@ -9,11 +9,13 @@ if TYPE_CHECKING:
 class CourseBase(SQLModel):
     course_code: int = Field(index=True)
     course_title: str
-    course_description: Optional[str]
+    course_description: Optional[str]=None
 
 
-class Course(CourseBase):
+class Course(CourseBase,table=True):
     id: int = Field(primary_key=True)
 
-    departments:List["Department"]=Relationship(back_populates="Instructor")
-    sections:List["Section"]=Relationship(back_populates="Instructor")
+    department_id:Optional[int]=Field(default=None,foreign_key="department.id")
+
+    department: Optional["Department"] = Relationship(back_populates="courses")
+    sections:List["Section"]=Relationship(back_populates="courses")
