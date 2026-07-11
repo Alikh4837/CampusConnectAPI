@@ -1,11 +1,9 @@
 from sqlmodel import SQLModel, Field,Relationship
 from typing import Optional,List,TYPE_CHECKING
-from app.models.department import Department
-from app.models.Section import Section
 
 if TYPE_CHECKING:
     from app.models.department import Department
-    from app.models.Section import Section
+    from app.models.section import Section
 
 
 class InstructorBase(SQLModel):
@@ -19,5 +17,5 @@ class InstructorBase(SQLModel):
 class Instructor(InstructorBase):
     id: int = Field(primary_key=True)
 
-    departments:List["Department"]=Relationship(back_populates="Instructor")
-    sections:List["Section"]=Relationship(back_populates="Instructor")
+    departments:List["Department"]=Relationship(back_populates="instructors")
+    sections:List["Section"]=Relationship(back_populates="sections")

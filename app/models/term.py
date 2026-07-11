@@ -1,9 +1,8 @@
 from sqlmodel import SQLModel, Field,Relationship
 from typing import Optional,List,TYPE_CHECKING
-from app.models.Section import Section
 
 if TYPE_CHECKING:
-    from app.models.Section import Section
+    from app.models.section import Section
 
 
 class TermBase(SQLModel):

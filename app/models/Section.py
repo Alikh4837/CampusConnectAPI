@@ -1,16 +1,10 @@
 from sqlmodel import SQLModel, Field,Relationship
 from typing import Optional,List,TYPE_CHECKING
 
-from app.models.course import Course
-from app.models.term import Term
-from app.models.Room import Room
-from app.models.instructor import Instructor
-from app.models.enrollment import Enrollment
-
 if TYPE_CHECKING:
     from app.models.course import Course
     from app.models.term import Term
-    from app.models.Room import Room
+    from app.models.room import Room
     from app.models.instructor import Instructor
     from app.models.enrollment import Enrollment
 

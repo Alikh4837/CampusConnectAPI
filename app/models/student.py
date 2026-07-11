@@ -1,6 +1,5 @@
 from sqlmodel import SQLModel, Field, Relationship
 from typing import Optional,List,TYPE_CHECKING
-from app.models.enrollment import Enrollment
 
 if TYPE_CHECKING:
     from app.models.enrollment import Enrollment
