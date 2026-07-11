@@ -31,3 +31,5 @@ class Course_Service:
             course_title="Mathematics",
             course_description="highly recommended"
         )
+    
+course_service=Course_Service()
