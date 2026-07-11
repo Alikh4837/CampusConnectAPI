@@ -14,4 +14,4 @@ class Department(DepartmentBase,table=True):
     id:int=Field(primary_key=True)
 
     instructors:List["Instructor"]=Relationship(back_populates="department")
-    Courses:List["Course"]=Relationship(back_populates="department")
+    courses:List["Course"]=Relationship(back_populates="department")
