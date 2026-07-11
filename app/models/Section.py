@@ -13,11 +13,16 @@ if TYPE_CHECKING:
 class SectionBase(SQLModel):
     section_name:str
 
-class Section(SectionBase):
+class Section(SectionBase,table=True):
     id:int=Field(primary_key=True)
 
-    Courses:List["Course"]=Relationship(back_populates="Section")
-    Terms:List["Term"]=Relationship(back_populates="Section")
-    Rooms:List["Room"]=Relationship(back_populates="Section")
-    Instructor:List["Instructor"]=Relationship(back_populates="Section")
-    Enrollments:List["Enrollment"]=Relationship(back_populates="Section")
+    course_id:Optional[int]=Field(default=None,foreign_key="course.id")
+    term_id:Optional[int]=Field(default=None,foreign_key="term.id")
+    room_id:Optional[int]=Field(default=None,foreign_key="room.id")
+    instructor_id:Optional[int]=Field(default=None,foreign_key="instructor.id")
+
+    course:Optional["Course"]=Relationship(back_populates="sections")
+    term:Optional["Term"]=Relationship(back_populates="sections")
+    room:Optional["Room"]=Relationship(back_populates="sections")
+    instructor:Optional["Instructor"]=Relationship(back_populates="sections")
+    enrollments:List["Enrollment"]=Relationship(back_populates="sections")
