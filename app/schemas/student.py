@@ -12,7 +12,7 @@ class UpdateStudent(StudentBase):
     gender:Optional[str]=None
     phone: Optional[int] = None
     email: Optional[str] = None
-    Address: Optional[str] = None
+    address: Optional[str] = None
     emergency_contact:Optional[int]=None
 
 class StudentResponse(StudentBase):

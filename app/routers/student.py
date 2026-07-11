@@ -18,11 +18,11 @@ def get_student() -> StudentResponse:
         name="john",
         dob="29june2005",
         gender="Male",
-        phone=20912,
+        phone="20912",
         email="alikh4837@gmail.com",
-        Address="Johar town",
+        address="Johar town",
         password="123",
-        emergency_contact=123,
+        emergency_contact="123",
     )
 
     return StudentResponse(**student.model_dump())
@@ -36,22 +36,22 @@ async def list_students() -> list[StudentResponse]:
             name="john",
             dob="29june2005",
             gender="Male",
-            phone=20912,
+            phone="20912",
             email="alikh4837@gmail.com",
-            Address="Johar town",
+            address="Johar town",
             password="123",
-            emergency_contact=123,
+            emergency_contact="123",
         ),
         Student(
             id=1,
             name="john",
             dob="29june2005",
             gender="Male",
-            phone=20912,
+            phone="20912",
             email="alikh4837@gmail.com",
-            Address="Johar town",
+            address="Johar town",
             password="123",
-            emergency_contact=123,
+            emergency_contact="123",
         ),
     ]
 
@@ -70,28 +70,28 @@ async def update_student() -> StudentResponse:
         name="john",
         dob="29june2005",
         gender="Male",
-        phone=20912,
+        phone="20912",
         email="alikh4837@gmail.com",
-        Address="Johar town",
+        address="Johar town",
         password="123",
-        emergency_contact=123,
+        emergency_contact="123",
     )
 
     return StudentResponse(**student.model_dump())
 
 
 @router.delete("/{id}", response_model=StudentResponse)
-async def delete_student(id: int = Depends()) -> StudentResponse:
+async def delete_student(id: int) -> StudentResponse:
     student = Student(
         id=1,
         name="john",
         dob="29june2005",
         gender="Male",
-        phone=20912,
+        phone="20912",
         email="alikh4837@gmail.com",
-        Address="Johar town",
+        address="Johar town",
         password="123",
-        emergency_contact=123,
+        emergency_contact="123",
     )
 
     return StudentResponse(**student.model_dump())

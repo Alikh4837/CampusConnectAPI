@@ -8,11 +8,11 @@ class StudentBase(SQLModel):
     name: str
     dob:str
     gender:str
-    phone: int = Field(index=True)
+    phone: str = Field(index=True)
     email: str
-    Address: str
+    address: str
     password:str
-    emergency_contact:Optional[int]
+    emergency_contact:Optional[str]
 
 
 class Student(StudentBase):

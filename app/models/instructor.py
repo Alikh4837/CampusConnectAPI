@@ -8,10 +8,10 @@ if TYPE_CHECKING:
 
 class InstructorBase(SQLModel):
     name: str
-    phone: int
+    phone: str
     address: str
     password:str
-    emergency_contact: Optional[int]
+    emergency_contact: Optional[str]
 
 
 class Instructor(InstructorBase):
