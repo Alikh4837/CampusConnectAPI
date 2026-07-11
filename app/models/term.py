@@ -8,7 +8,7 @@ if TYPE_CHECKING:
 class TermBase(SQLModel):
     Enrollment_Status:bool=False
 
-class Term(TermBase):
+class Term(TermBase,table=True):
     id:int=Field(primary_key=True)
 
-    sections:list["Section"]=Relationship(back_populates="Term")
+    sections:list["Section"]=Relationship(back_populates="term")
