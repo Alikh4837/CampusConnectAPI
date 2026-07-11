@@ -11,11 +11,13 @@ class InstructorBase(SQLModel):
     phone: str
     address: str
     password:str
-    emergency_contact: Optional[str]
+    emergency_contact: Optional[str]=None
 
 
-class Instructor(InstructorBase):
+class Instructor(InstructorBase,table=True):
     id: int = Field(primary_key=True)
 
-    departments:List["Department"]=Relationship(back_populates="instructors")
-    sections:List["Section"]=Relationship(back_populates="sections")
+    department_id:Optional[int]=Field(default=None,foreign_key="department.id")
+
+    department:Optional["Department"]=Relationship(back_populates="instructors")
+    sections:List["Section"]=Relationship(back_populates="instructor")
