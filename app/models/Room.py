@@ -8,9 +8,9 @@ if TYPE_CHECKING:
 class RoomBase(SQLModel):
     occupied_status:bool=False
     room_num:int
-    Building_num:int
+    building_num:int
 
-class Room(RoomBase):
+class Room(RoomBase,table=True):
     id:int=Field(primary_key=True)
 
-    sections:List["Section"]=Relationship(back_populates="Room")
+    sections:List["Section"]=Relationship(back_populates="room")
