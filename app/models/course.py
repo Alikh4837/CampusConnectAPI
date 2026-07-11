@@ -18,4 +18,4 @@ class Course(CourseBase,table=True):
     department_id:Optional[int]=Field(default=None,foreign_key="department.id")
 
     department: Optional["Department"] = Relationship(back_populates="courses")
-    sections:List["Section"]=Relationship(back_populates="courses")
+    sections:List["Section"]=Relationship(back_populates="course")
