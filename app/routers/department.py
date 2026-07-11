@@ -19,7 +19,7 @@ async def Get_Department()->DeptResponse:
     )
     return DeptResponse(**department.model_dump())
 
-@router.get("/list",response_model=DeptResponse)
+@router.get("/list",response_model=list[DeptResponse])
 async def List_Department()->list[DeptResponse]:
     departments=[
         Department(
@@ -56,4 +56,4 @@ async def Delete_Department(id:int)->DeptResponse:
         dept_name="HR",
         dept_code=1,
     )
-    return DeptResponse(**department.model_dump())
+    return DeptResponse(**department.model_dump())  

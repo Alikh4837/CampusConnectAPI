@@ -1,4 +1,4 @@
-from app.models.Room import RoomBase
+from app.models.room import RoomBase
 from typing import Optional
 
 class CreateRoom(RoomBase):

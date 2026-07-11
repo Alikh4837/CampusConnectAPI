@@ -15,7 +15,7 @@ def Create_Instructor(data:CreateInstructor):
 
 @router.get("/",response_model=InstructorResponse)
 def Get_Instructor()->InstructorResponse:
-    instructor=Instructor(
+    instructor=Instructor(  
          id=1,
             name="Prof.Ahmed",
             phone="+92 398 898379",
