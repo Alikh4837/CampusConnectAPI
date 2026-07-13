@@ -12,4 +12,5 @@ class Token(SQLModel):
 
 
 class TokenData(SQLModel):
-    username: str | None = None
+    subject: str | None = None
+    role: str | None = None
