@@ -9,6 +9,7 @@ class CreateInstructor(InstructorBase):
 class UpdateInstructor(InstructorBase):
     name: Optional[str] = None
     phone: Optional[int] = None
+    email:Optional[str]=None
     address: Optional[str] = None
     emergency_contact: Optional[int] = None
 
