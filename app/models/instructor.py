@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 class InstructorBase(SQLModel):
     name: str
     phone: str
+    email:str
     address: str
     password:str
     emergency_contact: Optional[str]=None
